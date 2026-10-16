@@ -1,3 +1,46 @@
 body {
-    
+    margin: 0;
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
 }
+
+/* center the board on the page */
+.mainscreen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* stack the 6 rows vertically */
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* each row holds 5 tiles side by side */
+.rows > div {
+    display: flex;
+    gap: 5px;
+}
+
+/* the tiles */
+.l {
+    width: 62px;
+    height: 62px;
+    box-sizing: border-box;
+    border: 2px solid #d3d6da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* states to toggle from JavaScript later */
+.l.filled  { border-color: #878a8c; }
+.l.correct { background-color: #6aaa64; border-color: #6aaa64; color: white; }
+.l.present { background-color: #c9b458; border-color: #c9b458; color: white; }
+.l.absent  { background-color: #787c7e; border-color: #787c7e; color: white; }
